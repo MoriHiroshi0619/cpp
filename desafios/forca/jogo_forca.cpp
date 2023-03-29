@@ -2,7 +2,7 @@
 #include <unistd.h> //função sleep()
 #include <chrono>
 #include <thread>
-#include <cstring>
+#include <cstring> // 
     ////    CRIAR UM JOGO DA FORCA SIMPLES   ////
 using namespace std;
 
@@ -49,26 +49,47 @@ int verificar_letra(char letra, string palavra){
     return existe;
 }
 
-
 void jogar(int tentativas, string progresso, string palavra){
     bool win = false;
-    while(win){
+    while(!win){
         char letra;
+        bool acerto = false;
         system("clear");
+        cout << tentativas << " chances restantes...\n";
         exibir_progresso(progresso);
-        cout << "por favor escolha uma letra:";
+        cout << "\n\npor favor escolha uma letra:";
         cin >> letra;
+        //limpando buffer de entrada para garantir o processamento de apenas um caracter;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.clear();
         if(verificar_letra(letra, palavra)){
             for(int i = 0; i < palavra.length(); i++){
                 if(palavra[i] == letra){
                     progresso[i] = letra;
+                    acerto = true;
                 }
             }
         }else{
-            cout << "letra incorreta: tente novamente";
+            cout << "letra incorreta!\ntente novament";
             cout.flush();
             sleep(1);
         }
+        if(progresso == palavra){
+            system("clear");
+            cout << "Parabens!!\n";
+            cout << palavra << " era a palavra secreta.";
+            cout << "\nvocê ganhou!";
+            break;
+        }
+        if(tentativas == 0){
+            system("clear");
+            cout << "ops, você perdeu.";
+            break;
+        }
+        if(!acerto){
+            tentativas--;
+        }
+        
     }
 }
 
@@ -85,8 +106,17 @@ int main (){
     progresso = palavra;
     inicializar_progesso(palavra, progresso);
     //mensagem_inicio();
-
+    //exibir_progresso(progresso);
     jogar(tentativas, progresso, palavra);
     cout << endl;
     return 0;
 }
+
+
+
+
+
+
+
+
+
