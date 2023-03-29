@@ -65,7 +65,7 @@ void jogar(int tentativas, string progresso, string palavra){
                 }
             }
         }else{
-            cout << "letra incorreta";
+            cout << "letra incorreta: tente novamente";
             cout.flush();
             sleep(1);
         }
@@ -87,7 +87,6 @@ int main (){
     //mensagem_inicio();
 
     jogar(tentativas, progresso, palavra);
-
     cout << endl;
     return 0;
 }
