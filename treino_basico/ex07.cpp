@@ -2,7 +2,8 @@
 #include <iostream>
 
 using namespace std;
-
+        //argc = quantidade de parametros passados para a o programa
+        //argv = os parametros.
 int main (int argc, char *argv[]){
 
     if(argc > 1){
