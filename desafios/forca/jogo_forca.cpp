@@ -2,7 +2,7 @@
 #include <unistd.h> //função sleep()
 #include <chrono>
 #include <thread>
-#include <cstring> // 
+#include <cstring> // .lenght()
     ////    CRIAR UM JOGO DA FORCA SIMPLES   ////
 using namespace std;
 
@@ -105,7 +105,7 @@ int main (){
 
     progresso = palavra;
     inicializar_progesso(palavra, progresso);
-    //mensagem_inicio();
+    mensagem_inicio();
     //exibir_progresso(progresso);
     jogar(tentativas, progresso, palavra);
     cout << endl;
