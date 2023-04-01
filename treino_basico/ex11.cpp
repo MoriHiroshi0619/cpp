@@ -11,6 +11,12 @@ int main (int argc, char *argv[]){
     //declaração <tipo de dados para a pilha> nome_da_pilha;
     stack <string> cartas;
 
+    if(cartas.empty()){ //metódo empty retorna true se a pilha estiver vazia
+        cout << "pilha vazia\n\n";
+    }else{  
+        cout << "pilha com cartas\n\n";
+    }
+
     //metódo para adicionar elemento a uma pilha
     cartas.push("Rei de Copas");
     cartas.push("Rei de Espadas");
@@ -21,10 +27,15 @@ int main (int argc, char *argv[]){
     cout << "carta do topo: " << cartas.top() << "\n"; //metódo top() mostra o conteudo do top da pilha
 
     //metódo para retirar um elemento da pilha ( retira do topo da pilha )
-    cartas.pop(); 
+    //cartas.pop(); 
 
-    cout << "tamanho da pilha: " << cartas.size() << "\n";
+    //cout << "tamanho da pilha: " << cartas.size() << "\n";
     
+    //rotina para deletar todos os elementos da pilha;
+    while(!cartas.empty()){
+        cout << "removendo: \"" << cartas.top() << "\" da pilha\n";
+        cartas.pop();
+    }
 
     cout << endl;
     return 0;
