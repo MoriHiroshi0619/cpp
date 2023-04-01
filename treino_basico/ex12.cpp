@@ -14,6 +14,7 @@ using namespace std;
     //fila: diferente da pilha, em uma fila, o primeiro a entrar é o primeiro a sair
 int main (int argc, char *argv[]){
 
+    //declaração de uma estrutura de fila
     queue <string> cartas;
 
     cartas.push("Rei de Copas");
@@ -33,7 +34,7 @@ int main (int argc, char *argv[]){
     cout << "primeira carta: " << cartas.front() << "\n";
     cout << "ultima carta: " << cartas.back() << "\n\n";
 
-    
+
 
     /* while(!cartas.empty()){
         cout << " removendo carta: \"" << cartas.front() << "\"\n";
