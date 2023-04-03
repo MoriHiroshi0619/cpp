@@ -1,4 +1,4 @@
-//aula 2 sobre structs (adicionando metodos a um struct)
+//aula 3 sobre structs (vetores e struct)
 
 #include <iostream>
 
@@ -43,13 +43,26 @@ struct CARRO{
 
 int main (int argc, char *argv[]){
 
-    CARRO car1, car2;
+    CARRO *carros = new CARRO[5];
+    CARRO car1, car2, car3, car4, car5;
+    carros[0] = car1;
+    carros[1] = car2;
+    carros[2] = car3;
+    carros[3] = car4;
+    carros[4] = car5;
 
-    car1.inserir("corolla", "prata", 2023, 300, 250);
-    car2.inserir("civic", "preto", 2019, 290, 240);
-    car1.mudaVel(-21);
-    car1.mostrar();
-    car2.mostrar();
+    carros[0].inserir("corolla", "prata", 2023, 300, 250);
+    carros[1].inserir("civic", "preto", 2019, 290, 240);
+    carros[2].inserir("Gol", "branco", 2011, 100, 120);
+    carros[3].inserir("Palio", "preto", 2008, 110, 120);
+    carros[4].inserir("Hilux", "vermelha", 2024, 400, 250);
+
+    for(int i = 0; i < 5; i++){
+        carros[i].mostrar(); 
+    }
+
+    
+
     cout << endl;
     return 0;
 }
