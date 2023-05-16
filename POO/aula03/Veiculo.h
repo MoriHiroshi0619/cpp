@@ -38,6 +38,9 @@ bool Veiculo::isArmado(){
 void Veiculo::setArmado(bool a){
     this->armado = a;
 }
+//kjbbjbjk
+
+
 void Veiculo::status(){
     std::cout << "Tipo do veiculo             : " << tipo <<std::endl;
     std::cout << "Velocidade maxima do veiculo: " << velMax <<std::endl;
